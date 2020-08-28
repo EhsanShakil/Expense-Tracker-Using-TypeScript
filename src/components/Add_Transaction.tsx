@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../GlobalState/Gloabal_State";
+
+type State = {
+  description: string;
+  amount: number;
+};
 
 const AddTransaction = () => {
+  const [description, setDescription] = useState<State>();
+  const [amount, setAmount] = useState<State>();
+
+  const { addTransaction } = useContext(GlobalContext);
+
   return (
     <div>
       <h1>Add Transaction</h1>
