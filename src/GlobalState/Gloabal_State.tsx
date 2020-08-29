@@ -1,15 +1,21 @@
 import React, { createContext, useReducer } from "react";
 import AppReducer from "./App_Reducer";
 
-type State = {
-  transactions: {
-    ID: number;
-    Description: string;
-    Amount: number;
-  }[];
+export type TranstionType = {
+  ID: number;
+  Description: string;
+  Amount: number;
 };
 
-let InitialState: State = {
+type TranstionArray = {
+  transactions: TranstionType[];
+};
+
+type Context = {
+  transaction: TranstionType[];
+  addTrans: (transaction: TranstionType) => void;
+};
+let InitialState: TranstionArray = {
   transactions: [
     {
       ID: 1,
@@ -19,12 +25,12 @@ let InitialState: State = {
   ],
 };
 
-export const GlobalContext = createContext(InitialState);
+export const GlobalContext = createContext<Partial<Context>>({});
 
 export const GlobalProvider = ({ children }: any) => {
   const [state, dispatch] = useReducer(AppReducer, InitialState);
 
-  const addTrans = (transaction: State) => {
+  const addTrans = (transaction: TranstionType) => {
     dispatch({
       type: "ADD_TRANSACTION",
       payload: transaction,
@@ -33,7 +39,7 @@ export const GlobalProvider = ({ children }: any) => {
 
   return (
     <GlobalContext.Provider
-      value={{ transactions: state.transactions, addTrans }}
+      value={{ transaction: state.transactions, addTrans }}
     >
       {children}
     </GlobalContext.Provider>
