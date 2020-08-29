@@ -1,26 +1,20 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../GlobalState/Gloabal_State";
 
-type State = {
-  description: string;
-  amount: number;
-  callback: (e: React.FormEvent<EventTarget>) => void;
-};
-
 const AddTransaction = () => {
-  const [description, setDescription] = useState<State>();
-  const [amount, setAmount] = useState<State>();
+  const [description, setDescription] = useState<string>();
+  const [amount, setAmount] = useState<number>();
 
-  const { addTransaction }: any = useContext(GlobalContext);
+  const { addTrans }: any = useContext(GlobalContext);
 
   const handleSubmit = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
-    const transaction: object = {
+    const transaction = {
       ID: Math.round(Math.random() * 900000),
       description,
       amount,
     };
-    addTransaction(transaction);
+    console.log(addTrans(transaction));
   };
 
   return (
@@ -43,6 +37,7 @@ const AddTransaction = () => {
           placeholder="Enter Tranaction Amount"
           onChange={(e: any) => setAmount(e.target.value)}
         />
+        <button>Submit</button>
       </form>
     </div>
   );
