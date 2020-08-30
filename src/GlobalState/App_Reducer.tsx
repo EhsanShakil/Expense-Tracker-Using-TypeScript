@@ -3,7 +3,7 @@ export default (state: any, action: any) => {
     case "ADD_TRANSACTION":
       return {
         ...state,
-        transaction: [action.payload, ...state.transactions],
+        transaction: [...state.transactions, action.payload],
       };
   }
 };
