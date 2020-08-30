@@ -4,22 +4,19 @@ import { GlobalContext } from "../GlobalState/Gloabal_State";
 const AddTransaction = () => {
   const [description, setDescription] = useState<string>();
   const [amount, setAmount] = useState<number>();
-  const [id, setId] = useState<number>(100);
 
-  const { addTransaction }: any = useContext(GlobalContext);
+  const { addTrans }: any = useContext(GlobalContext);
 
   const handleSubmit = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
-    console.log(id);
-    console.log(description);
-    console.log(amount);
-    setId(id + 1);
     const transaction: any = {
-      ID: id,
-      Description: description,
-      Amount: amount,
+      ID: Math.round(Math.random() * 900000),
+      description,
+      price: Number(amount),
     };
-    console.log(addTransaction(transaction));
+    console.log(transaction);
+    setDescription("");
+    setAmount(0);
   };
 
   return (
@@ -33,6 +30,7 @@ const AddTransaction = () => {
           value={description}
           placeholder="Enter Tranaction Description"
           onChange={(e: any) => setDescription(e.target.value)}
+          required
         />
         <label htmlFor="amount">Transaction Amount</label>
         <input
@@ -41,6 +39,7 @@ const AddTransaction = () => {
           value={amount}
           placeholder="Enter Tranaction Amount"
           onChange={(e: any) => setAmount(e.target.value)}
+          required
         />
         <button>Submit</button>
       </form>
