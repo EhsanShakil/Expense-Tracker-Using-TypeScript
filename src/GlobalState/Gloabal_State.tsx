@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from "react";
 import AppReducer from "./App_Reducer";
 
 export type State = {
-  transactions: StateObject[];
+  transaction: StateObject[];
 };
 
 export type StateObject = {
@@ -12,12 +12,12 @@ export type StateObject = {
 };
 
 type contextProps = {
-  transactions: StateObject[];
+  transaction: StateObject[];
   addTransaction: (transaction: StateObject) => void;
 };
 
 let InitialState: State = {
-  transactions: [
+  transaction: [
     {
       ID: 1,
       Description: "Income",
@@ -29,7 +29,7 @@ let InitialState: State = {
       Amount: -500,
     },
     {
-      ID: 1,
+      ID: 3,
       Description: "Bill",
       Amount: 200,
     },
@@ -50,7 +50,7 @@ export const GlobalProvider = ({ children }: any) => {
 
   return (
     <GlobalContext.Provider
-      value={{ transactions: state.transactions, addTransaction }}
+      value={{ transaction: state.transaction, addTransaction }}
     >
       {children}
     </GlobalContext.Provider>

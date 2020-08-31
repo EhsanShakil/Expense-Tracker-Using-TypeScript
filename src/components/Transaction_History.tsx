@@ -3,16 +3,16 @@ import { GlobalContext } from "../GlobalState/Gloabal_State";
 import { StateObject } from "../GlobalState/Gloabal_State";
 
 const TransactionHistory = () => {
-  const { transactions }: any = useContext(GlobalContext);
-  console.log(transactions);
+  const { transaction }: any = useContext(GlobalContext);
+  console.log(transaction);
   return (
     <div>
       <h1>Transaction History</h1>
-      {transactions.map((transaction: StateObject, index: number) => (
+      {transaction.map((trans: StateObject, index: number) => (
         <div key={index}>
-          <li> {transaction.ID}</li>
-          <li> {transaction.Description}</li>
-          <li> {transaction.Amount}</li>
+          <li> {trans.ID}</li>
+          <li> {trans.Description}</li>
+          <li> {trans.Amount}</li>
         </div>
       ))}
     </div>

@@ -7,12 +7,12 @@ const AddTransaction = () => {
 
   const { addTransaction }: any = useContext(GlobalContext);
 
-  const handleSubmit = (e: React.FormEvent<EventTarget>) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     const transaction: any = {
       ID: Math.round(Math.random() * 900000),
-      description,
-      price: Number(amount),
+      Description: description,
+      Amount: Number(amount),
     };
     addTransaction(transaction);
     setDescription("");
