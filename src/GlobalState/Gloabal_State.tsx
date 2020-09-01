@@ -11,7 +11,7 @@ export type StateObject = {
   Amount: number;
 };
 
-type contextProps = {
+export type contextProps = {
   transaction: StateObject[];
   addTransaction: (transaction: StateObject) => void;
 };

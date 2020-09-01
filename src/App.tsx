@@ -1,15 +1,16 @@
 import React from "react";
 import "./App.css";
 import { GlobalProvider } from "./GlobalState/Gloabal_State";
-import AddTransaction from "./components/Add_Transaction";
-import TransactionHistory from "./components/Transaction_History";
-import Balance from "./components/Balance";
-
+import AddTransaction from "./Components/Add_Transaction";
+import TransactionHistory from "./Components/Transaction_History";
+import Balance from "./Components/Balance";
+import Income from "./Components/Income";
 function App() {
   return (
     <GlobalProvider>
       <h1>Expense Tracker</h1>
       <Balance />
+      <Income />
       <AddTransaction />
       <TransactionHistory />
     </GlobalProvider>
