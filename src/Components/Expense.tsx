@@ -12,7 +12,7 @@ const Balance = () => {
   console.log(total);
 
   return (
-    <div className="balancecomponent">
+    <div>
       <h2>Expense</h2>
 
       <h3>

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../GlobalState/Gloabal_State";
+import "../App.css";
 
 const Balance = () => {
   const { transaction }: any = useContext(GlobalContext);
@@ -9,12 +10,9 @@ const Balance = () => {
   console.log(total);
 
   return (
-    <div className="balancecomponent">
+    <div className="container">
       <h2>Current Balance</h2>
-
-      <h3>
-        <b>${total}</b>
-      </h3>
+      <h3>${total}</h3>
     </div>
   );
 };
