@@ -8,4 +8,9 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  margin-top: 30px;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
 }

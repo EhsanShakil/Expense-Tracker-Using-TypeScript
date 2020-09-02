@@ -12,12 +12,9 @@ const Balance = () => {
   console.log(total);
 
   return (
-    <div>
+    <div className="container">
       <h2>Expense</h2>
-
-      <h3>
-        <b>-${Math.abs(total)}</b>
-      </h3>
+      <h3>-${Math.abs(total)}</h3>
     </div>
   );
 };

@@ -10,10 +10,12 @@ import Expense from "./Components/Expense";
 function App() {
   return (
     <GlobalProvider>
-      <h1>Expense Tracker</h1>
-      <Balance />
-      <Income />
-      <Expense />
+      <h1 className="header">Expense Tracker</h1>
+      <div className="wrapper">
+        <Balance />
+        <Income />
+        <Expense />
+      </div>
       <AddTransaction />
       <TransactionHistory />
     </GlobalProvider>

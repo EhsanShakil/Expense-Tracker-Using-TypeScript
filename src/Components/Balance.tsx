@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../GlobalState/Gloabal_State";
-import "../App.css";
 
 const Balance = () => {
   const { transaction }: any = useContext(GlobalContext);
