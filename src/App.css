@@ -17,3 +17,19 @@
 .header {
   text-align: center;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.input {
+  height: 30px;
+  margin-bottom: 30px;
+}
+.button {
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50px;
+  outline: none;
+}
