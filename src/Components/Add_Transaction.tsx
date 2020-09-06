@@ -22,7 +22,9 @@ const AddTransaction = () => {
     <div>
       <h1>Add Transaction</h1>
       <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="description">Description:</label>
+        <label htmlFor="description">
+          <h3>Description</h3>
+        </label>
         <input
           type="text"
           id="description"
@@ -32,7 +34,9 @@ const AddTransaction = () => {
           required
           className="input"
         />
-        <label htmlFor="amount">Transaction Amount:</label>
+        <label htmlFor="amount">
+          <h3>Transaction Amount</h3>
+        </label>
         <input
           type="number"
           id="amount"
