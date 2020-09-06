@@ -35,3 +35,14 @@
   font-size: large;
   font-weight: bold;
 }
+.table {
+  margin: 20px;
+}
+.thead > tr > th {
+  width: 400px;
+}
+.tbody > tr > td {
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+}

@@ -8,12 +8,42 @@ const TransactionHistory = () => {
   return (
     <div>
       <h1>Transaction History</h1>
-      {transaction.map((trans: StateObject, index: number) => (
-        <div key={index}>
-          <li> {trans.Description}</li>
-          <li> {trans.Amount}</li>
-        </div>
-      ))}
+      <table className="table">
+        <thead className="thead">
+          <tr>
+            <th>
+              <h3>Description</h3>
+              <hr />
+            </th>
+            <th>
+              <h3>Amount</h3>
+              <hr />
+            </th>
+            <th>
+              <h3>Remove</h3>
+              <hr />
+            </th>
+          </tr>
+        </thead>
+        <tbody className="tbody">
+          {transaction.map((trans: StateObject, index: number) => (
+            <tr key={index}>
+              <td>
+                {trans.Description}
+                <hr />
+              </td>
+              <td>
+                {trans.Amount}
+                <hr />
+              </td>
+              <td>
+                <button>Remove</button>
+                <hr />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
