@@ -14,6 +14,7 @@ export type StateObject = {
 export type contextProps = {
   transaction: StateObject[];
   addTransaction: (transaction: StateObject) => void;
+  deleteTransaction: (ID: StateObject) => void;
 };
 
 let InitialState: State = {
@@ -47,10 +48,19 @@ export const GlobalProvider = ({ children }: any) => {
       payload: transaction,
     });
   };
-
+  const deleteTransaction = (ID: StateObject) => {
+    dispatch({
+      type: "DELETE_TRANSACTION",
+      payload: ID,
+    });
+  };
   return (
     <GlobalContext.Provider
-      value={{ transaction: state.transaction, addTransaction }}
+      value={{
+        transaction: state.transaction,
+        addTransaction,
+        deleteTransaction,
+      }}
     >
       {children}
     </GlobalContext.Provider>

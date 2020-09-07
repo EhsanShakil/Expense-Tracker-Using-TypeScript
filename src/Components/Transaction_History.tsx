@@ -3,8 +3,9 @@ import { GlobalContext } from "../GlobalState/Gloabal_State";
 import { StateObject } from "../GlobalState/Gloabal_State";
 
 const TransactionHistory = () => {
-  const { transaction }: any = useContext(GlobalContext);
+  const { transaction, deleteTransaction }: any = useContext(GlobalContext);
   console.log(transaction);
+
   return (
     <div>
       <h1>Transaction History</h1>
@@ -37,7 +38,12 @@ const TransactionHistory = () => {
                 <hr />
               </td>
               <td>
-                <button>Remove</button>
+                <button
+                  className="remove"
+                  onClick={() => deleteTransaction(trans.ID)}
+                >
+                  Remove
+                </button>
                 <hr />
               </td>
             </tr>

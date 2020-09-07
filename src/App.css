@@ -52,3 +52,11 @@ body {
   text-align: center;
   padding: 10px;
 }
+.remove {
+  width: 100px;
+  /* height: 40px; */
+  background-color: white;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+}

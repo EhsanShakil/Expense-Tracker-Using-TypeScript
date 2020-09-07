@@ -5,5 +5,12 @@ export default (state: any, action: any) => {
         ...state,
         transaction: [action.payload, ...state.transaction],
       };
+    case "DELETE_TRANSACTION":
+      return {
+        ...state,
+        transaction: state.transaction.filter(
+          (transaction: any) => transaction.ID !== action.payload
+        ),
+      };
   }
 };
