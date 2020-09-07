@@ -42,7 +42,7 @@ const TransactionHistory = () => {
                   className="remove"
                   onClick={() => deleteTransaction(trans.ID)}
                 >
-                  Remove
+                  Delete
                 </button>
                 <hr />
               </td>
