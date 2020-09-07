@@ -9,7 +9,6 @@ const Balance = () => {
   );
   const expense = amount.map((income: any) => income.Amount);
   const total = expense.reduce((acc: number, item: number) => (acc += item), 0);
-  console.log(total);
 
   return (
     <div className="container">

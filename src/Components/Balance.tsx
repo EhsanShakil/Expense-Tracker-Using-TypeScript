@@ -6,7 +6,6 @@ const Balance = () => {
 
   const amount = transaction.map((transaction: any) => transaction.Amount);
   const total = amount.reduce((acc: number, item: number) => (acc += item), 0);
-  console.log(total);
 
   return (
     <div className="container">
