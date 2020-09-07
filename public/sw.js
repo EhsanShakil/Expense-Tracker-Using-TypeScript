@@ -16,7 +16,7 @@ this.addEventListener("install", (event) => {
 this.addEventListener("fetch", (event) => {
   if (!navigator.onLine) {
     event.respondWith(
-      cache.match(event.request).then((result) => {
+      caches.match(event.request).then((result) => {
         if (result) {
           return result;
         }
