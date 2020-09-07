@@ -16,8 +16,8 @@ function App() {
         <Income />
         <Expense />
       </div>
-      <AddTransaction />
       <TransactionHistory />
+      <AddTransaction />
     </GlobalProvider>
   );
 }

@@ -19,21 +19,21 @@ export type contextProps = {
 
 let InitialState: State = {
   transaction: [
-    {
-      ID: 1,
-      Description: "Income",
-      Amount: 5000,
-    },
-    {
-      ID: 2,
-      Description: "Expense",
-      Amount: -500,
-    },
-    {
-      ID: 3,
-      Description: "Bill",
-      Amount: 200,
-    },
+    // {
+    //   ID: 1,
+    //   Description: "Income",
+    //   Amount: 5000,
+    // },
+    // {
+    //   ID: 2,
+    //   Description: "Expense",
+    //   Amount: -500,
+    // },
+    // {
+    //   ID: 3,
+    //   Description: "Bill",
+    //   Amount: 200,
+    // },
   ],
 };
 
