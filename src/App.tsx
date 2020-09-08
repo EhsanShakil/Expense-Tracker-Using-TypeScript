@@ -6,8 +6,20 @@ import TransactionHistory from "./Components/Transaction_History";
 import Balance from "./Components/Balance";
 import Income from "./Components/Income";
 import Expense from "./Components/Expense";
+import firebase from "./firebase";
 
 function App() {
+  let messaging: any = firebase.messaging();
+  if (Notification.permission === "granted") {
+    messaging
+      .requestPermission()
+      .then((token: any) => {
+        return messaging.getToken();
+      })
+      .then((result: any) => console.log("Token: ", result));
+  } else if (Notification.permission === "denied") {
+    messaging.requestPermission().catch((error: any) => console.log(error));
+  }
   return (
     <GlobalProvider>
       <h1 className="header">Expense Tracker</h1>
