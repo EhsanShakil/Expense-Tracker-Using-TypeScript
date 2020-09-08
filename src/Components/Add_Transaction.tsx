@@ -36,6 +36,7 @@ const AddTransaction = () => {
         />
         <label htmlFor="amount">
           <h3>Transaction Amount</h3>
+          <p>use negative sign for expense</p>
         </label>
         <input
           type="number"
