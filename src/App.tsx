@@ -13,7 +13,7 @@ function App() {
   if (Notification.permission === "granted") {
     messaging
       .requestPermission()
-      .then((token: any) => {
+      .then(() => {
         return messaging.getToken();
       })
       .then((result: any) => console.log("Token: ", result));

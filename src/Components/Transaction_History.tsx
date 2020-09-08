@@ -4,7 +4,6 @@ import { StateObject } from "../GlobalState/Gloabal_State";
 
 const TransactionHistory = () => {
   const { transaction, deleteTransaction }: any = useContext(GlobalContext);
-  console.log(transaction);
 
   return (
     <div>
